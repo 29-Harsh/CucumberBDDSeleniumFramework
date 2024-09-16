@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Sep 15 18:03:30 EDT 2024</td>
+<td>Started on:</td><td>Sun Sep 15 22:10:48 EDT 2024</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (259 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (408 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,23 +76,24 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='cucumberOptions.TestNgRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNgRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Admin login", "Application login"</td>
-<td><div><pre>io.cucumber.testng.UndefinedStepException: The step &apos;Admin is on login page&apos; and 2 other step(s) are undefined.
+<td title='cucumberOptions.TestNgRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNgRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User signup", "Application login"</td>
+<td><div><pre>io.cucumber.testng.UndefinedStepException: The step &apos;User is on signup page&apos; and 1 other step(s) are undefined.
 You can implement these steps using the snippet(s) below:
 
-@Given(&quot;Admin is on login page&quot;)
-public void admin_is_on_login_page() {
+@Given(&quot;User is on signup page&quot;)
+public void user_is_on_signup_page() {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
-@When(&quot;Admin enters credentials&quot;)
-public void admin_enters_credentials() {
+@When(&quot;User enters credentials&quot;)
+public void user_enters_credentials(io.cucumber.datatable.DataTable dataTable) {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;Display Home page&quot;)
-public void display_home_page() {
-    // Write code here that turns the phrase above into concrete actions
+    // For automatic transformation, change DataTable to one of
+    // E, List&lt;E&gt;, List&lt;List&lt;E&gt;&gt;, List&lt;Map&lt;K,V&gt;&gt;, Map&lt;K,V&gt; or
+    // Map&lt;K, List&lt;V&gt;&gt;. E,K,V must be a String, Integer, Float,
+    // Double, Byte, Short, Long, BigInteger or BigDecimal.
+    //
+    // For other transformations you can register a DataTableType.
     throw new io.cucumber.java.PendingException();
 }
 
@@ -130,23 +131,24 @@ public void display_home_page() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace169880779", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace169880779'><pre>io.cucumber.testng.UndefinedStepException: The step &apos;Admin is on login page&apos; and 2 other step(s) are undefined.
+</pre></div><a href='#' onClick='toggleBox("stack-trace1269773610", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1269773610'><pre>io.cucumber.testng.UndefinedStepException: The step &apos;User is on signup page&apos; and 1 other step(s) are undefined.
 You can implement these steps using the snippet(s) below:
 
-@Given(&quot;Admin is on login page&quot;)
-public void admin_is_on_login_page() {
+@Given(&quot;User is on signup page&quot;)
+public void user_is_on_signup_page() {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
-@When(&quot;Admin enters credentials&quot;)
-public void admin_enters_credentials() {
+@When(&quot;User enters credentials&quot;)
+public void user_enters_credentials(io.cucumber.datatable.DataTable dataTable) {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then(&quot;Display Home page&quot;)
-public void display_home_page() {
-    // Write code here that turns the phrase above into concrete actions
+    // For automatic transformation, change DataTable to one of
+    // E, List&lt;E&gt;, List&lt;List&lt;E&gt;&gt;, List&lt;Map&lt;K,V&gt;&gt;, Map&lt;K,V&gt; or
+    // Map&lt;K, List&lt;V&gt;&gt;. E,K,V must be a String, Integer, Float,
+    // Double, Byte, Short, Long, BigInteger or BigDecimal.
+    //
+    // For other transformations you can register a DataTableType.
     throw new io.cucumber.java.PendingException();
 }
 
@@ -185,6 +187,25 @@ public void display_home_page() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
+<td>0</td>
+<td>cucumberOptions.TestNgRunner@795509d9</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='cucumberOptions.TestNgRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNgRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User login", "Application login"</td>
+<td></td>
+<td>0</td>
+<td>cucumberOptions.TestNgRunner@795509d9</td></tr>
+<tr>
+<td title='cucumberOptions.TestNgRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNgRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User login", "Application login"</td>
+<td></td>
 <td>0</td>
 <td>cucumberOptions.TestNgRunner@795509d9</td></tr>
 </table><p>
