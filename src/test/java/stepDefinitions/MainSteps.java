@@ -21,7 +21,7 @@ public class MainSteps {
 	@When("Admin enters credentials username {string} and password {string}")
 	public void admin_enters_credentials_username_and_password(String a, String b) {
 	    // Write code here that turns the phrase above into concrete actions
-		System.out.println(a+ "admin_enters_credentials_username_and_password" + b); 
+		System.out.println(a+ "- admin_enters_credentials_username_and_password -" + b); 
 	    //throw new io.cucumber.java.PendingException();
 	}
 	
