@@ -28,14 +28,14 @@ Background:
 #Parameterization in cucumber scenario
 #Use this when you want to run same testcase with different data sets having same behaviour
 
+#if you want to pass any other data type alphanumeric paramter 
+#use regex  in step definition file and you don't need to use "" in scenario for passing data.
+
 @smoketest
 Scenario Outline: User login
   Given Admin is on login page
   When Admin enters credentials username "<User>" and password "<Pass>"
   Then Display Home page
-  
-#if you want to pass any other data type alphanumeric paramter 
-#use regex  
   
  Examples:
  	|User|Pass|

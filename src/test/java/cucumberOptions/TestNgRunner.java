@@ -12,7 +12,7 @@ import io.cucumber.testng.CucumberOptions;
 //more e.g tags = @smoketest and @regressiontest , tags = @smoketest and @negativetest
 
 
-@CucumberOptions(features="src/test/java/features", glue = "stepDefinitions",tags= "@regressiontest and @negativetest" ,monochrome = true)
+@CucumberOptions(features="src/test/java/features", glue = "stepDefinitions",tags= "@regressiontest or @smoketest" ,monochrome = true)
 public class TestNgRunner extends AbstractTestNGCucumberTests{
 	
 	

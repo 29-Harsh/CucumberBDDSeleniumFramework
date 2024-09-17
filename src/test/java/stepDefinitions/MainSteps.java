@@ -14,6 +14,19 @@ public class MainSteps {
 	}
 	
 	
+	@Given("Admin is on insurance login page")
+	public void admin_is_on_insurance_login_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	    System.out.println("Admin is on insurance login page");
+	}
+	
+	@Given("Admin is on mortgage login page")
+	public void admin_is_on_mortgage_login_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	    System.out.println("Admin is on mortgage login page");
+	}
+	
+	
 	//@When("^Admin enters credentials username (.+) and password (.+) $")
 	// This is for regex to accept any type of data from feature file "ANYTHING" - IMPORTANT
 	
