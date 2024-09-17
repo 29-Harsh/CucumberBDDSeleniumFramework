@@ -10,9 +10,11 @@ import io.cucumber.testng.CucumberOptions;
 //AbstractTestNGCucumberTests - inherit so that our TestNgRunner gets life to run our tests
 //tags= "not @negativetest" means run all tags except negative test.
 //more e.g tags = @smoketest and @regressiontest , tags = @smoketest and @negativetest
+//dryrun attribute is to compile and check missing step definition. very helpful in large feature files.
+// pretty is used for color and reports can be generated in json format as well.
 
-
-@CucumberOptions(features="src/test/java/features", glue = "stepDefinitions",tags= "@regressiontest or @smoketest" ,monochrome = true)
+@CucumberOptions(features="src/test/java/features", glue = "stepDefinitions",tags= "@regressiontest or @smoketest" ,monochrome = true,
+plugin = {"pretty", "html:target/cucumber.html"}, dryRun = true)
 public class TestNgRunner extends AbstractTestNGCucumberTests{
 	
 	
