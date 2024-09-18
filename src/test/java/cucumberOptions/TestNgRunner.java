@@ -13,8 +13,8 @@ import io.cucumber.testng.CucumberOptions;
 //dryrun attribute is to compile and check missing step definition. very helpful in large feature files.
 // pretty is used for color and reports can be generated in json format as well.
 
-@CucumberOptions(features="src/test/java/features", glue = "stepDefinitions",tags= "@regressiontest or @smoketest" ,monochrome = true,
-plugin = {"pretty", "html:target/cucumber.html"}, dryRun = true)
+@CucumberOptions(features="src/test/java/features", glue = "stepDefinitions",tags= "@searchproduct" ,monochrome = true,
+plugin = {"pretty", "html:target/cucumber.html"})
 public class TestNgRunner extends AbstractTestNGCucumberTests{
 	
 	

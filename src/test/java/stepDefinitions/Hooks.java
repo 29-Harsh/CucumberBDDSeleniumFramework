@@ -12,7 +12,7 @@ public class Hooks {
 		System.out.println("create entry into insurance database");
 	}
 	
-	@Before("mortgage")
+	@Before("@mortgage")
 	public void mortgageDBSetup() {
 		System.out.println("create entry into mortgage database");
 	}
