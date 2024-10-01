@@ -4,8 +4,8 @@ Feature: Search Product
 @searchproduct	 	
 Scenario: Search product on home and offer page
   Given User is on home page
-  When User enters shortname of product "Tom" and click offer page
-  Then User enters same shortname "Tom" and see if same product exists
+  When User enters shortname of product "Tom" and extract the name
+  Then User enters same shortname "Tom" in offer page and see if same product exists
 	
 
 	
