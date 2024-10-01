@@ -5,7 +5,7 @@ Feature: Search Product
 Scenario: Search product on home and offer page
   Given User is on home page
   When User enters shortname of product "Tom" and click offer page
-  Then User enters shortname and see if same product exists
+  Then User enters same shortname "Tom" and see if same product exists
 	
 
 	
