@@ -18,7 +18,7 @@ import utils.ContextSetup;
 
 public class SearchProduct {
 	ContextSetup contextSetup;
-	PageObjectManager pageObjectManager;
+	//PageObjectManager pageObjectManager;
 	
 	public SearchProduct(ContextSetup contextSetup) {
 		this.contextSetup = contextSetup;
@@ -26,9 +26,7 @@ public class SearchProduct {
 	
 	@Given("User is on home page")
 	public void user_is_on_home_page() {
-		System.setProperty("webdriver.chrome.driver", "D:\\Workspace\\CucumberBDDSeleniumFramework\\driver\\chromedriver.exe");
-		contextSetup.driver = new ChromeDriver();
-		contextSetup.driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
+	contextSetup.baseClass.webDriverManager();	
 		//String pageTitle = driver.getTitle();
 		//System.out.println("Pagetitle "+pageTitle);
 		
@@ -50,7 +48,7 @@ public class SearchProduct {
 		
 		
 		landingPage.getProductName().split("-")[0].trim();
-		System.out.println("Extracted from home page: " + contextSetup.landingPageProductName);		
+		System.out.println("Extracted from home page: " + landingPage.getProductName().split("-")[0].trim());		
 		
 	}
 

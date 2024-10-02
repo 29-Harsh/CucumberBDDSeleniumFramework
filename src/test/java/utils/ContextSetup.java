@@ -6,12 +6,18 @@ import pageObject.PageObjectManager;
 
 public class ContextSetup {
 	
-	public WebDriver driver;
+	//public WebDriver driver;
 	public String landingPageProductName;
 	public PageObjectManager pageObjectManager;
+	public BaseClass baseClass;
+	public GenericUtils genericU;
 	
 	public ContextSetup() {
-		pageObjectManager = new PageObjectManager(driver);
+		
+		baseClass = new BaseClass();
+		pageObjectManager = new PageObjectManager(baseClass.webDriverManager());
+		genericU = new GenericUtils(baseClass.webDriverManager());
+		
 	}
 
 }

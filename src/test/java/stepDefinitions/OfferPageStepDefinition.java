@@ -12,6 +12,7 @@ import io.cucumber.java.en.Then;
 import pageObject.LandingPage;
 import pageObject.OfferPage;
 import utils.ContextSetup;
+import utils.GenericUtils;
 
 public class OfferPageStepDefinition {
 	String OfferPageProductName;
@@ -25,33 +26,30 @@ public class OfferPageStepDefinition {
 	public void user_enters_shortname_and_see_if_same_product_exists(String sName) throws InterruptedException {
 		
 		switchToWindow();
-		//contextSetup.driver.findElement(By.xpath("//input[@type='search']")).sendKeys(sName);
 		
-		//OfferPage offerPage = new OfferPage(contextSetup.driver);
+		//contextSetup.driver.findElement(By.xpath("//input[@type='search']")).sendKeys(sName);
+	    //OfferPage offerPage = new OfferPage(contextSetup.driver);
 		
 		OfferPage offerPage = contextSetup.pageObjectManager.getOfferPage();
 		offerPage.searchProduct(sName);
-		
 		Thread.sleep(2000);
+		
 		//OfferPageProductName = contextSetup.driver.findElement(By.cssSelector("tr td:nth-child(1)")).getText();
 		
 		offerPage.getProductName();
-		
 		assertEquals(contextSetup.landingPageProductName, OfferPageProductName);
 	}
 	
 	public void switchToWindow() throws InterruptedException {
-		contextSetup.driver.findElement(By.linkText("Top Deals")).click();
+		//contextSetup.driver.findElement(By.linkText("Top Deals")).click();
 		
 		LandingPage landingPage = contextSetup.pageObjectManager.getLandingPage();
 		landingPage.topDeals();
 		
 		Thread.sleep(2000);
-		Set<String> s1 = contextSetup.driver.getWindowHandles();
-		Iterator<String> i1 = s1.iterator();
-		String parentWindow = i1.next();
-		String childWindow = i1.next();
-		contextSetup.driver.switchTo().window(childWindow);
+		
+		contextSetup.genericU.switchWindow();
+
 	}
 
 }
