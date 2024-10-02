@@ -13,10 +13,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObject.LandingPage;
+import pageObject.PageObjectManager;
 import utils.ContextSetup;
 
 public class SearchProduct {
 	ContextSetup contextSetup;
+	PageObjectManager pageObjectManager;
 	
 	public SearchProduct(ContextSetup contextSetup) {
 		this.contextSetup = contextSetup;
@@ -37,7 +39,10 @@ public class SearchProduct {
 		//System.out.println(string);
 		//contextSetup.driver.findElement(By.xpath("//input[@type='search']")).sendKeys(lName);
 		
-		LandingPage landingPage = new LandingPage(contextSetup.driver);
+		//LandingPage landingPage = new LandingPage(contextSetup.driver);
+		//pageObjectManager = new PageObjectManager(contextSetup.driver);
+		
+		LandingPage landingPage = contextSetup.pageObjectManager.getLandingPage();
 		landingPage.searchProduct(lName);
 		Thread.sleep(1000);
 		

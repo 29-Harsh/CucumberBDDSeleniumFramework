@@ -27,7 +27,9 @@ public class OfferPageStepDefinition {
 		switchToWindow();
 		//contextSetup.driver.findElement(By.xpath("//input[@type='search']")).sendKeys(sName);
 		
-		OfferPage offerPage = new OfferPage(contextSetup.driver);
+		//OfferPage offerPage = new OfferPage(contextSetup.driver);
+		
+		OfferPage offerPage = contextSetup.pageObjectManager.getOfferPage();
 		offerPage.searchProduct(sName);
 		
 		Thread.sleep(2000);
@@ -41,7 +43,7 @@ public class OfferPageStepDefinition {
 	public void switchToWindow() throws InterruptedException {
 		contextSetup.driver.findElement(By.linkText("Top Deals")).click();
 		
-		LandingPage landingPage = new LandingPage(contextSetup.driver);
+		LandingPage landingPage = contextSetup.pageObjectManager.getLandingPage();
 		landingPage.topDeals();
 		
 		Thread.sleep(2000);
