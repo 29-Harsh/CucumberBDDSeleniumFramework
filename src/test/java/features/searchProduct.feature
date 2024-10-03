@@ -9,3 +9,13 @@ Scenario: Search product on home and offer page
 	
 
 	
+@searchproductScenarioOutlineExmaple	 	
+Scenario Outline: Search product on home and offer page
+  Given User is on home page
+  When User enters shortname of product <Name> and extract the name
+  Then User enters same shortname <Name> in offer page and see if same product exists
+  
+Examples:
+|Name|
+|Tom| 
+|Beet|

@@ -17,12 +17,16 @@ import utils.GenericUtils;
 public class OfferPageStepDefinition {
 	String OfferPageProductName;
 	ContextSetup contextSetup;
+	LandingPage landingPage;
+	OfferPage offerPage;
 	
 	public OfferPageStepDefinition(ContextSetup contextSetup) {
 		this.contextSetup = contextSetup;
+		landingPage = contextSetup.pageObjectManager.getLandingPage();
+		offerPage = contextSetup.pageObjectManager.getOfferPage();
 	}
 	
-	@Then("User enters same shortname {string} in offer page and see if same product exists")
+	@Then("^User enters same shortname (.+) in offer page and see if same product exists$")
 	public void user_enters_shortname_and_see_if_same_product_exists(String sName) throws InterruptedException {
 		
 		switchToWindow();
@@ -30,20 +34,22 @@ public class OfferPageStepDefinition {
 		//contextSetup.driver.findElement(By.xpath("//input[@type='search']")).sendKeys(sName);
 	    //OfferPage offerPage = new OfferPage(contextSetup.driver);
 		
-		OfferPage offerPage = contextSetup.pageObjectManager.getOfferPage();
+		 
 		offerPage.searchProduct(sName);
 		Thread.sleep(2000);
 		
 		//OfferPageProductName = contextSetup.driver.findElement(By.cssSelector("tr td:nth-child(1)")).getText();
 		
 		offerPage.getProductName();
-		assertEquals(contextSetup.landingPageProductName, OfferPageProductName);
+		//System.out.println("offerpage " + offerPage.getProductName());
+		//System.out.println("landing Page " + contextSetup.landingPageProductName);
+		assertEquals(contextSetup.landingPageProductName, offerPage.getProductName());
 	}
 	
 	public void switchToWindow() throws InterruptedException {
 		//contextSetup.driver.findElement(By.linkText("Top Deals")).click();
 		
-		LandingPage landingPage = contextSetup.pageObjectManager.getLandingPage();
+		 
 		landingPage.topDeals();
 		
 		Thread.sleep(2000);

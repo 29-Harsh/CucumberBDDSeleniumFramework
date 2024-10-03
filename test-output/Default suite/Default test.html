@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Oct 02 16:28:29 EDT 2024</td>
+<td>Started on:</td><td>Wed Oct 02 21:53:44 EDT 2024</td>
 </tr>
-<tr><td>Total time:</td><td>11 seconds (11106 ms)</td>
+<tr><td>Total time:</td><td>13 seconds (13457 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,39 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='cucumberOptions.TestNgRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNgRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Search product on home and offer page", "Search Product"</td>
+<td><div><pre>java.lang.AssertionError: expected [No data] but found [Beetroot]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at stepDefinitions.OfferPageStepDefinition.user_enters_shortname_and_see_if_same_product_exists(OfferPageStepDefinition.java:46)
+	at ✽.User enters same shortname Beet in offer page and see if same product exists(file:///D:/Workspace/CucumberBDDSeleniumFramework/src/test/java/features/searchProduct.feature:16)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1273520748", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1273520748'><pre>java.lang.AssertionError: expected [No data] but found [Beetroot]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at stepDefinitions.OfferPageStepDefinition.user_enters_shortname_and_see_if_same_product_exists(OfferPageStepDefinition.java:46)
+	at ✽.User enters same shortname Beet in offer page and see if same product exists(file:///D:/Workspace/CucumberBDDSeleniumFramework/src/test/java/features/searchProduct.feature:16)
+</pre></div></td>
+<td>12</td>
+<td>cucumberOptions.TestNgRunner@4d1c005e</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -78,7 +111,7 @@ function toggleAllBoxes() {
 <tr>
 <td title='cucumberOptions.TestNgRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNgRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Search product on home and offer page", "Search Product"</td>
 <td></td>
-<td>10</td>
+<td>12</td>
 <td>cucumberOptions.TestNgRunner@4d1c005e</td></tr>
 </table><p>
 </body>
