@@ -51,8 +51,20 @@ public class SearchProduct {
 		
 		
 		contextSetup.landingPageProductName = landingPage.getProductName().split("-")[0].trim();
-		System.out.println("Extracted from home page: " + landingPage.getProductName().split("-")[0].trim());		
+		//System.out.println("Extracted from home page: " + landingPage.getProductName().split("-")[0].trim());		
 		
+	}
+	
+	@When("Add items to cart and proceed to checkout")
+	public void add_items_to_cart_and_proceed_to_checkout() throws InterruptedException {
+		
+		//System.out.println("number of items " + numberOfItems);
+		landingPage.addToCart();
+		Thread.sleep(1000);
+		landingPage.goCart();
+		Thread.sleep(1000);
+		landingPage.proceedCheckout();
+		Thread.sleep(2000);
 	}
 
 }
