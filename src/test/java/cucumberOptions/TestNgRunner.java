@@ -16,15 +16,12 @@ import io.cucumber.testng.CucumberOptions;
 // pretty is used for color and reports can be generated in json format as well.
 
 @CucumberOptions(features="src/test/java/features", glue = "stepDefinitions",tags= "@checkoutProduct" ,monochrome = true,
-plugin = {"pretty", "html:target/cucumber.html"})
+plugin = {"pretty", "html:target/cucumber.html", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 public class TestNgRunner extends AbstractTestNGCucumberTests{
 	
 	@Override
 	@DataProvider(parallel = true)
 	public Object[][] scenarios() {
 		return super.scenarios();
-	}
-	
-	
-	
+	}	
 }
