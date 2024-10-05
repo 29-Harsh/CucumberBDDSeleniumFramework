@@ -17,7 +17,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(features="src/test/java/features",
                  glue = "stepDefinitions",
-                 tags= "@checkoutProduct or @searchproductScenarioOutlineExmaple",
+                 tags= "@searchproductScenarioOutlineExmaple or @checkoutProduct",
                  monochrome = true,
                  plugin = {"pretty", "html:target/cucumber.html", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 		                   "rerun: failedCases/failed_scenarios.txt"})

@@ -36,18 +36,18 @@ public class SearchProduct {
 	
 	@When("^User enters shortname of product (.+) and extract the name$")
 	public void user_enters_shortname_of_product_and_extract_the_name(String lName) throws InterruptedException {
-		//System.out.println(string);
+		System.out.println(lName);
 		//contextSetup.driver.findElement(By.xpath("//input[@type='search']")).sendKeys(lName);
 		
 		//LandingPage landingPage = new LandingPage(contextSetup.driver);
 		//pageObjectManager = new PageObjectManager(contextSetup.driver);
 		
 		landingPage.searchProduct(lName);
-		
+		Thread.sleep(2000);
 		//contextSetup.landingPageProductName = contextSetup.driver.findElement(By.cssSelector("h4.product-name")).getText().split("-")[0].trim();
 		
 		contextSetup.landingPageProductName = landingPage.getProductName().split("-")[0].trim();
-		//System.out.println("Extracted from home page: " + landingPage.getProductName().split("-")[0].trim());		
+		System.out.println("Extracted from home page: " + landingPage.getProductName().split("-")[0].trim());		
 	}
 	
 	@When("Add items to cart and proceed to checkout")
@@ -55,8 +55,11 @@ public class SearchProduct {
 		
 		//System.out.println("number of items " + numberOfItems);
 		landingPage.addToCart();
+		Thread.sleep(2000);
 		landingPage.goCart();
+		Thread.sleep(2000);
 		landingPage.proceedCheckout();
+		Thread.sleep(2000);
 		
 	}
 

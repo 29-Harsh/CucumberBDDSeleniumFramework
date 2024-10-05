@@ -37,7 +37,7 @@ public class BaseClass {
 				//System.setProperty("webdriver.gecko.driver","System.getProperty("user.dir")+");
 				//driver = new FirefoxDriver();
 			}
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get(url);
 		}
 		return driver;

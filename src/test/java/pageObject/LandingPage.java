@@ -17,7 +17,7 @@ public class LandingPage {
 	By topDeals = By.linkText("Top Deals");
 	By cart = By.xpath("//img[@alt='Cart']");
 	By checkoutButton = By.xpath("//button[normalize-space()='PROCEED TO CHECKOUT']");
-	By addToCart = By.xpath("//button[contains(text(),'ADD TO CART')]");
+	By addToCart = By.cssSelector(".product-action button");
 	
 	public void searchProduct(String lName) {
 		driver.findElement(search).sendKeys(lName);

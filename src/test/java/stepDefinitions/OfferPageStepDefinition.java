@@ -39,8 +39,8 @@ public class OfferPageStepDefinition {
 		//OfferPageProductName = contextSetup.driver.findElement(By.cssSelector("tr td:nth-child(1)")).getText();
 		
 		offerPage.getProductName();
-		//System.out.println("offerpage " + offerPage.getProductName());
-		//System.out.println("landing Page " + contextSetup.landingPageProductName);
+		System.out.println("offerpage " + offerPage.getProductName());
+		System.out.println("landing Page " + contextSetup.landingPageProductName);
 		assertEquals(contextSetup.landingPageProductName, offerPage.getProductName());
 	}
 	
