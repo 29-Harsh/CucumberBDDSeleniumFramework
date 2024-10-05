@@ -29,10 +29,9 @@ public class SearchProduct {
 	@Given("User is on home page")
 	public void user_is_on_home_page() {
 		
-	//contextSetup.baseClass.webDriverManager();	
+		//contextSetup.baseClass.webDriverManager();	
 		//String pageTitle = driver.getTitle();
 		//System.out.println("Pagetitle "+pageTitle);
-		
 	}
 	
 	@When("^User enters shortname of product (.+) and extract the name$")
@@ -43,16 +42,12 @@ public class SearchProduct {
 		//LandingPage landingPage = new LandingPage(contextSetup.driver);
 		//pageObjectManager = new PageObjectManager(contextSetup.driver);
 		
-		
 		landingPage.searchProduct(lName);
-		Thread.sleep(1000);
 		
 		//contextSetup.landingPageProductName = contextSetup.driver.findElement(By.cssSelector("h4.product-name")).getText().split("-")[0].trim();
 		
-		
 		contextSetup.landingPageProductName = landingPage.getProductName().split("-")[0].trim();
 		//System.out.println("Extracted from home page: " + landingPage.getProductName().split("-")[0].trim());		
-		
 	}
 	
 	@When("Add items to cart and proceed to checkout")
@@ -60,11 +55,9 @@ public class SearchProduct {
 		
 		//System.out.println("number of items " + numberOfItems);
 		landingPage.addToCart();
-		Thread.sleep(1000);
 		landingPage.goCart();
-		Thread.sleep(1000);
 		landingPage.proceedCheckout();
-		Thread.sleep(2000);
+		
 	}
 
 }

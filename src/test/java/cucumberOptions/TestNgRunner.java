@@ -15,13 +15,22 @@ import io.cucumber.testng.CucumberOptions;
 //dryrun attribute is to compile and check missing step definition. very helpful in large feature files.
 // pretty is used for color and reports can be generated in json format as well.
 
-@CucumberOptions(features="src/test/java/features", glue = "stepDefinitions",tags= "@checkoutProduct" ,monochrome = true,
-plugin = {"pretty", "html:target/cucumber.html", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
+@CucumberOptions(features="src/test/java/features",
+                 glue = "stepDefinitions",
+                 tags= "@checkoutProduct or @searchproductScenarioOutlineExmaple",
+                 monochrome = true,
+                 plugin = {"pretty", "html:target/cucumber.html", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
+		                   "rerun: failedCases/failed_scenarios.txt"})
 public class TestNgRunner extends AbstractTestNGCucumberTests{
 	
 	@Override
-	@DataProvider(parallel = true)
+	@DataProvider(parallel = true) // this is to run all scenarios in parallel using cucumber scenarios method defined in searchproductScenarioOutlineExmaple
 	public Object[][] scenarios() {
 		return super.scenarios();
 	}	
 }
+
+//to rerun the failed scenarios, why to run whole project.
+// so only to rerun failed ones use rerun plugin in runner
+// plugin = {"rerun: failedCases/failed_scenarios.txt"}
+// then create one more testRunner class called failedRunner and features = "@target/failed_scenarios.txt"

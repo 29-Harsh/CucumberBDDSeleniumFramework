@@ -1,6 +1,9 @@
 package stepDefinitions;
 
 import static org.testng.Assert.assertEquals;
+
+import java.io.IOException;
+
 import io.cucumber.java.en.Then;
 import pageObject.CheckoutPage;
 import utils.ContextSetup;
@@ -29,7 +32,7 @@ public class CheckoutStepDefinition {
 	}
 	
 	@Then("Validate order place succesfully")
-	public void validate_order_place_succesfully() {
+	public void validate_order_place_succesfully() throws IOException {
 		checkoutPage.placeOrder();
 		System.out.println(contextSetup.baseClass.webDriverManager().getCurrentUrl());
 	}

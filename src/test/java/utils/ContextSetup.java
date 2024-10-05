@@ -1,5 +1,7 @@
 package utils;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 
 import pageObject.PageObjectManager;
@@ -12,12 +14,10 @@ public class ContextSetup {
 	public BaseClass baseClass;
 	public GenericUtils genericU;
 	
-	public ContextSetup() {
-		
+	public ContextSetup() throws IOException {
 		baseClass = new BaseClass();
 		pageObjectManager = new PageObjectManager(baseClass.webDriverManager());
 		genericU = new GenericUtils(baseClass.webDriverManager());
-		
 	}
 
 }
